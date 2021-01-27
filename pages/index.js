@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import Widget from '../src/components/Widget'
+
 import db from '../db.json'
 
 const BackgroundImage = styled.div`
@@ -22,7 +24,15 @@ export default function Home() {
   return (
     <BackgroundImage>
       <QuizContainer>
-        oi
+        <Widget theme={db.theme}>
+          <Widget.Header>
+            Arrow
+          </Widget.Header>
+
+          <Widget.Content>
+            <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+          </Widget.Content>
+        </Widget>
       </QuizContainer>
     </BackgroundImage>
   )

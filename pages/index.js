@@ -1,15 +1,10 @@
 import styled from 'styled-components'
 import Widget from '../src/components/Widget'
 import Footer from '../src/components/Footer'
-import GitHubCorner from '../src/components/GitHubCorner'
+import QuizBackground from '../src/components/QuizBackground'
+import GithubCorner from '../src/components/GithubCorner'
 
 import db from '../db.json'
-
-const BackgroundImage = styled.div`
-  background-image: url(${db.bg});
-  flex: 1;
-  background-size: cover;
-`
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -24,20 +19,30 @@ export const QuizContainer = styled.div`
 
 export default function Home() {
   return (
-    <BackgroundImage>
+    <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <Widget theme={db.theme}>
           <Widget.Header>
-            Arrow
+            <h1>Arrow</h1>
           </Widget.Header>
 
           <Widget.Content>
             <p>Lorem ipsum dolor sit amet, consectetur adip</p>
           </Widget.Content>
         </Widget>
+
+        <Widget theme={db.theme}>
+          <Widget.Content>
+            <h1>Quizes da Galera</h1>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+          </Widget.Content>
+        </Widget>
+
+        <Footer/>
       </QuizContainer>
 
-      <Footer/>
-    </BackgroundImage>
+      <GithubCorner projectUrl="https://github.com/joaovictornsv/arrow-quiz"/>
+    </QuizBackground>
   )
 }

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
 import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
 import QuizBackground from '../src/components/QuizBackground';
-import GithubCorner from '../src/components/GithubCorner';
+import GithubCorner from '../src/components/GitHubCorner';
 import QuizLogo from '../src/components/QuizLogo';
 
 import db from '../db.json';
@@ -22,6 +22,7 @@ export const QuizContainer = styled.div`
 `;
 
 export default function Home() {
+  const router = useRouter();
   const [name, setName] = useState('');
 
   return (
@@ -36,20 +37,28 @@ export default function Home() {
           <Widget.Content>
             <p>Lorem ipsum dolor sit amet, consectetur adip</p>
 
-            <label htmlFor="input-name">Digite seu nome:</label>
-            <input
-              type="text"
-              name="input-name"
-              id="input-name"
-              value={name}
-              onChange={(e) => { setName(e.target.value); }}
-            />
-            <br />
-            <button>
-              Vamos jogar
-              {name}
-              ?
-            </button>
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              router.push(`/quiz?name=${name}`);
+            }}
+            >
+              <input
+                type="text"
+                name="input-name"
+                id="input-name"
+                value={name}
+                placeholder="Digite seu nome"
+                onChange={(e) => { setName(e.target.value); }}
+              />
+              <br />
+              <button type="submit">
+                Vamos jogar
+                {' '}
+                {name}
+                ?
+              </button>
+            </form>
+
           </Widget.Content>
         </Widget>
 

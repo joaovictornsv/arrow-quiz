@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Button = styled.button`
@@ -25,9 +25,9 @@ const Button = styled.button`
   }
 `;
 
-// Button.propTypes = {
-//   type: PropTypes.oneOf(['submit', 'type', 'button']).isRequired,
-//   children: PropTypes.node.isRequired,
-// };
+Button.propTypes = {
+  type: PropTypes.oneOf(['submit', 'type', 'button']).isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 export default Button;

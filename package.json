@@ -27,7 +27,9 @@
     "@commitlint/config-conventional": "^11.0.0",
     "babel-plugin-styled-components": "^1.8.0",
     "commitizen": "^4.2.3",
+    "commitlint-config-gitmoji": "^2.1.10",
     "cz-customizable": "^6.3.0",
+    "cz-emoji": "^1.3.1",
     "eslint": "^7.18.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
@@ -39,10 +41,26 @@
   "license": "MIT",
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-customizable"
+      "path": "./node_modules/cz-emoji",
+      "skipQuestions": ["scope", "body", "footer", "breaking"],
+      "allowCustomScopes": true
     },
-    "cz-customizable": {
-      "config": "./cz-config.js"
+    "cz-emoji": {
+      "scopes": [
+        {
+          "name": "experiment"
+        },
+        {
+          "name": "admin"
+        },
+        {
+          "name": "exampleScope"
+        },
+        {
+          "name": "changeMe"
+        }
+      ],
+      "skipQuestions": ["body", "issues"]
     }
   }
 }

@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "eslint:init": "eslint --init",
-    "lint": "eslint ./ --fix"
+    "lint": "eslint ./ --fix",
+    "commit": "git-cz"
   },
   "dependencies": {
     "next": "latest",
@@ -16,14 +17,29 @@
     "react-is": "^16.8.0",
     "styled-components": "^5.0.0"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "babel-plugin-styled-components": "^1.8.0",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.18.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.8"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

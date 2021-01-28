@@ -1,6 +1,7 @@
 'use-strict'
 
 module.exports = {
+  skipQuestions: ['body'],
   types: [
     {
       value: ":house:(build)",

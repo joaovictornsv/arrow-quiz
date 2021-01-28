@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import QuizBackground from '../src/components/QuizBackground';
-import { QuizContainer } from './index';
+import QuizContainer from '../src/components/QuizContainer';
 import QuizLogo from '../src/components/QuizLogo';
 import Widget from '../src/components/Widget';
 import GitHubCorner from '../src/components/GitHubCorner';

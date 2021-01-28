@@ -18,7 +18,6 @@ module.exports = {
         ':white_check_mark:(test)',
       ],
     ],
-    'subject-separator': [2, 'always', ''],
     'subject-case': [2, 'always', 'sentence-case'],
     'subject-max-length': [2, 'always', 50],
     'subject-empty': [2, 'always'],

@@ -356,6 +356,16 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@gitmoji/commit-types@1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@gitmoji/commit-types/-/commit-types-1.1.5.tgz#8ca89aeea4e253a3818ac63206b4eb4f2352c4ff"
+  integrity sha512-8D3FZMRY+gtYpTcHG1SOGmm9CFqxNh6rI9xDoCydxHxnWgqInbdF3nk9gibW5gXA58Hf2cVcJaLEcGOKLRAtmw==
+
+"@gitmoji/parser-opts@1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@gitmoji/parser-opts/-/parser-opts-1.2.5.tgz#d7adac21a76ed929a497ab8654686d1be244bfa3"
+  integrity sha512-Imxx7OjuZH374H7wNMBEwJ9i1U/0xGEPxjcyYfX47fKzdWZ57UNmiYEC4HoAV8sDpGi4AG0uU4o4NgOiQP1sEg==
+
 "@hapi/accept@5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-5.0.1.tgz#068553e867f0f63225a506ed74e899441af53e10"
@@ -1455,6 +1465,20 @@ commitizen@^4.0.3, commitizen@^4.2.3:
     minimist "1.2.5"
     strip-bom "4.0.0"
     strip-json-comments "3.0.1"
+
+commitlint-config-gitmoji@^2.1.10:
+  version "2.1.10"
+  resolved "https://registry.yarnpkg.com/commitlint-config-gitmoji/-/commitlint-config-gitmoji-2.1.10.tgz#9be85853d12675fb60820882fc38ac3c41a99669"
+  integrity sha512-TM1m+9F7AEiAF7QzAc8XxjDGDqlNB4tVIyYQK0d2215Ckvg0b3LnCI1A2MN41ll1re2dFxHsoRv1aTQJhXQQMg==
+  dependencies:
+    "@gitmoji/commit-types" "1.1.5"
+    "@gitmoji/parser-opts" "1.2.5"
+    commitlint-plugin-gitmoji "2.0.4"
+
+commitlint-plugin-gitmoji@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/commitlint-plugin-gitmoji/-/commitlint-plugin-gitmoji-2.0.4.tgz#27253085a2ab1bc5ea0b22edd1d27308a316c76f"
+  integrity sha512-3e3UJabeSpVRhNY/wzitLPxavCQiSyiWpNoCYQf5Zsqnou+W7o97J5VIm19RhwBVzSOEh6/AxrlQVKbDBo6Lxw==
 
 commondir@^1.0.1:
   version "1.0.1"

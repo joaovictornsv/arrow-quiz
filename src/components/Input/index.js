@@ -14,7 +14,6 @@ const InputBase = styled.input`
   margin-bottom: 25px;
 `;
 
-// eslint-disable-next-line react/prop-types
 export default function Input({ onChange, placeholder, ...props }) {
   return (
     <div>

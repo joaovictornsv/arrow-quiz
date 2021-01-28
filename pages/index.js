@@ -53,10 +53,7 @@ export default function Home() {
                 onChange={(e) => { setName(e.target.value); }}
               />
               <Button type="submit" disabled={name === ''}>
-                Vamos jogar
-                {' '}
-                {name}
-                ?
+                {`Vamos jogar ${name}?`}
               </Button>
             </form>
 

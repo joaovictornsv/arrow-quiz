@@ -50,7 +50,7 @@
       "path": "./node_modules/cz-customizable"
     },
     "cz-customizable": {
-      "path": "./cz-config.js"
+      "config": "./cz-config.js"
     }
   }
 }

@@ -3,7 +3,6 @@
 module.exports = {
   skipQuestions: ['body', 'scope', 'footer', 'breaking'],
   subjectLimit: 100,
-  subjectSeparator: ' ',
   types: [
     {
       value: ':house:(build)',

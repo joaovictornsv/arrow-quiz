@@ -49,9 +49,9 @@ function QuestionWidget({
         src={question.image}
       />
       <Widget.Content>
-        {/* <h2>
+        <h2>
           {question.title}
-        </h2> */}
+        </h2>
         <p>
           {question.description}
         </p>

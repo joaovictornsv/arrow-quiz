@@ -1,12 +1,13 @@
 module.exports = {
   rules: {
     'type-case': [2, 'always', 'lower-case'],
+    'type-empty': [2, 'never'],
     'type-enum': [
       2,
       'always',
       [
         ':house: (build)',
-        '(chore)',
+        ':wrench: (chore)',
         ':construction_worker: (ci)',
         ':memo: (docs)',
         ':sparkles: (feat)',
@@ -18,6 +19,7 @@ module.exports = {
         ':white_check_mark: (test)',
       ],
     ],
+    'scope-empty': [2, 'always'],
     'subject-case': [2, 'always', 'lower-case'],
     'subject-max-length': [2, 'always', 50],
     'subject-empty': [2, 'never'],

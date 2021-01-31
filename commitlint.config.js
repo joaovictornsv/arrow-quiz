@@ -6,7 +6,7 @@ module.exports = {
       'always',
       [
         ':house: (build)',
-        ':gear: (chore)',
+        ':wrench: (chore)',
         ':construction_worker: (ci)',
         ':memo: (docs)',
         ':sparkles: (feat)',

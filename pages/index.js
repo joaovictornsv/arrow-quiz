@@ -38,7 +38,7 @@ export default function Home() {
                 name="input-name"
                 id="input-name"
                 value={name}
-                placeholder="Seu nome"
+                placeholder="Digite seu nome"
                 onChange={(e) => { setName(e.target.value); }}
               />
               <Button type="submit" disabled={name === ''}>

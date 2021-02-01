@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 import Loading from '@material-ui/core/CircularProgress';
 
 import db from '../db.json';
@@ -28,8 +28,17 @@ function QuestionWidget({
   questionIndex,
   totalQuestions,
   onSubmit,
+  correctAnswer,
 }) {
+  const [currentAlternative, setCurrentAlternative] = useState('');
+  const [questionStatus, setQuestionStatus] = useState('');
   const questionId = `question__${questionIndex}`;
+
+  function handleSubmitQuestion() {
+    return currentAlternative === correctAnswer
+      ? setQuestionStatus('correct')
+      : setQuestionStatus('wrong');
+  }
   return (
     <Widget>
       <Widget.Header>
@@ -59,6 +68,7 @@ function QuestionWidget({
         <form
           onSubmit={(infosDoEvento) => {
             infosDoEvento.preventDefault();
+            handleSubmitQuestion();
             onSubmit();
           }}
         >
@@ -67,6 +77,7 @@ function QuestionWidget({
             return (
               <Widget.Topic
                 as="label"
+                key={alternativeId}
                 htmlFor={alternativeId}
               >
                 <input
@@ -74,6 +85,7 @@ function QuestionWidget({
                   id={alternativeId}
                   name={questionId}
                   type="radio"
+                  onChange={setCurrentAlternative(alternativeId)}
                 />
                 {alternative}
               </Widget.Topic>
@@ -83,9 +95,13 @@ function QuestionWidget({
           {/* <pre>
             {JSON.stringify(question, null, 4)}
           </pre> */}
-          <Button type="submit">
+          <Button type="submit" disabled={currentAlternative}>
             Confirmar
           </Button>
+
+          {questionStatus === 'correct' && (<p>Você acertou!</p>)}
+          {questionStatus === 'wrong' && (<p>Você errou!</p>)}
+
         </form>
       </Widget.Content>
     </Widget>
@@ -103,6 +119,7 @@ export default function QuizPage() {
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const questionIndex = currentQuestion;
   const question = db.questions[questionIndex];
+  const { answer } = question;
 
   // [React chama de: Efeitos || Effects]
   // React.useEffect
@@ -135,6 +152,7 @@ export default function QuizPage() {
             questionIndex={questionIndex}
             totalQuestions={totalQuestions}
             onSubmit={handleSubmitQuiz}
+            correctAnswer={answer}
           />
         )}
 

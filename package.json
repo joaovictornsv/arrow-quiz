@@ -6,8 +6,7 @@
     "build": "next build",
     "start": "next start",
     "eslint:init": "eslint --init",
-    "lint": "eslint ./ --fix",
-    "commit": "git-cz"
+    "lint": "eslint ./ --fix"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
